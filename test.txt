@@ -1,0 +1,2 @@
+curl "http://16.170.239.41:5000/api?international_plan=yes&voice_mail_plan=no&total_day_minutes=276.6&total_eve_minutes=192.1&total_intl_minutes=7.2&number_customer_service_calls=3"
+curl "http://16.170.239.41:5000/api?international_plan=no&voice_mail_plan=yes&total_day_minutes=222.5&total_eve_minutes=194.6&total_intl_minutes=9.7&number_customer_service_calls=2"
