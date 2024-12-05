@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
-import numpy as np
+import pandas as pd
 import joblib 
 from sklearn.preprocessing import LabelEncoder
 
-model = joblib.load('best_model.pkl') 
+model = joblib.load("best_random_forest_model.pkl")
+encoders = joblib.load("encoders.pkl")
 categorical_features = ['international_plan', 'voice_mail_plan']
-label_encoders = {feature: LabelEncoder() for feature in categorical_features}
 
 app = Flask(__name__)
 
@@ -35,10 +35,14 @@ def predict():
 
 
         for feature in categorical_features:
-            label_encoders[feature].fit([data[feature] for data in [data]]) 
-            data[feature] = label_encoders[feature].transform([data[feature]])[0]  
+            data[feature] = encoders[feature].transform([data[feature]])[0]
 
-        input_data = np.array([list(map(float, [data[feature] for feature in expected_features]))]).reshape(1, -1)
+
+        input_data = pd.DataFrame(
+            [{feature: float(data[feature]) for feature in expected_features}],
+            columns=expected_features
+        )
+
         prediction = model.predict(input_data)
 
         return jsonify({'prediction': prediction.tolist()})

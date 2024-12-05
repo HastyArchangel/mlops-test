@@ -1,2 +1,8 @@
-curl "http://16.170.239.41:5000/api?international_plan=1&voice_mail_plan=0&total_day_minutes=276.6&total_eve_minutes=192.1&total_intl_minutes=7.2&number_customer_service_calls=3"
-curl "http://16.170.239.41:5000/api?international_plan=0&voice_mail_plan=1&total_day_minutes=222.5&total_eve_minutes=194.6&total_intl_minutes=9.7&number_customer_service_calls=2"
+curl "http://16.170.239.41:5000/api?international_plan=no&voice_mail_plan=yes&total_day_minutes=0&total_eve_minutes=0&total_intl_minutes=0&number_customer_service_calls=0" 
+curl "http://16.170.239.41:5000/api?international_plan=no&voice_mail_plan=yes&total_day_minutes=0&total_eve_minutes=0&total_intl_minutes=0&number_customer_service_calls=10"
+curl "http://16.170.239.41:5000/api?international_plan=yes&voice_mail_plan=no&total_day_minutes=200&total_eve_minutes=200&total_intl_minutes=10&number_customer_service_calls=3"
+curl "http://16.170.239.41:5000/api?international_plan=no&voice_mail_plan=yes&total_day_minutes=200&total_eve_minutes=200&total_intl_minutes=10&number_customer_service_calls=3"
+curl "http://16.170.239.41:5000/api?international_plan=no&voice_mail_plan=no&total_day_minutes=710&total_eve_minutes=500&total_intl_minutes=310&number_customer_service_calls=3"
+curl "http://16.170.239.41:5000/api?international_plan=no&voice_mail_plan=no&total_day_minutes=70&total_eve_minutes=500&total_intl_minutes=310&number_customer_service_calls=3"
+curl "http://16.170.239.41:5000/api?international_plan=no&voice_mail_plan=no&total_day_minutes=70&total_eve_minutes=500&total_intl_minutes=310&number_customer_service_calls=5"
+
